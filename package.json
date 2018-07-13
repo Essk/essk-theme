@@ -4,6 +4,8 @@
   "description": "Wordpress theme incorporating Vue.js Components",
   "main": "index.js",
   "scripts": {
+    "build" : "cd ./vue-components/ && npm run build && cp ./dist/js/*.js ../dist/js/vue/",
+    "serve" : "gulp watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Sarah Rimron-Soutter",
