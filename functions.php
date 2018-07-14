@@ -121,6 +121,7 @@ add_action( 'widgets_init', 'essk_widgets_init' );
  */
 function essk_scripts() {
 	wp_enqueue_style( 'essk-style', get_template_directory_uri() . '/dist/css/main.min.css', array(), filemtime(get_stylesheet_directory() .'/dist/css/main.min.css' ), 'all' );
+	wp_enqueue_style( 'essk-fonts', "https://fonts.googleapis.com/css?family=Comfortaa:700|Titillium+Web:400,400i,700|PT+Mono"  );
 	wp_enqueue_script( 'essk-main', get_template_directory_uri() . '/dist/js/main.min.js', array(), filemtime(get_template_directory() .'/dist/js/main.min.js' ), true );
 	wp_enqueue_script( 'essk-vue', get_template_directory_uri() . '/dist/js/vue/chunk-vendors.js', array(), filemtime(get_template_directory() .'/dist/js/vue/chunk-vendors.js' ), true );
 
