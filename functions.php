@@ -120,12 +120,9 @@ add_action( 'widgets_init', 'essk_widgets_init' );
  * Enqueue scripts and styles.
  */
 function essk_scripts() {
-	wp_enqueue_style( 'essk-style', get_template_directory_uri() . '/dist/css/main.min.css' );
-
-	//wp_enqueue_script( 'essk-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
-
-	//wp_enqueue_script( 'essk-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
-	wp_enqueue_script( 'essk-main', get_template_directory_uri() . '/dist/js/main.min.js', array(), '20151215', true );
+	wp_enqueue_style( 'essk-style', get_template_directory_uri() . '/dist/css/main.min.css', array(), filemtime(get_stylesheet_directory() .'/dist/css/main.min.css' ), 'all' );
+	wp_enqueue_script( 'essk-main', get_template_directory_uri() . '/dist/js/main.min.js', array(), filemtime(get_template_directory() .'/dist/js/main.min.js' ), true );
+	wp_enqueue_script( 'essk-vue', get_template_directory_uri() . '/dist/js/vue/chunk-vendors.js', array(), filemtime(get_template_directory() .'/dist/js/vue/chunk-vendors.js' ), true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
