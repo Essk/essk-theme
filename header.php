@@ -34,24 +34,31 @@
 				<?php
 			else :
 				?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+				<p class="site-brand-lockup" >
+					{
+				<span class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></span> :
+				
 				<?php
 			endif;
 			$essk_description = get_bloginfo( 'description', 'display' );
 			if ( $essk_description || is_customize_preview() ) :
 				?>
-				<p class="site-description"><?php echo $essk_description; /* WPCS: xss ok. */ ?></p>
+				<span class="site-description"><?php echo $essk_description; /* WPCS: xss ok. */ ?></span> }
+			</p>
 			<?php endif; ?>
 		</div><!-- .site-branding -->
 
 		<nav id="site-navigation" class="main-navigation">
 			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'essk' ); ?></button>
+			
 			<?php
 			wp_nav_menu( array(
 				'theme_location' => 'menu-1',
 				'menu_id'        => 'primary-menu',
+				'link_after'			 => ',&nbsp;'
 			) );
 			?>
+			
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
 
